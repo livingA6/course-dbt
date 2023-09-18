@@ -55,3 +55,4 @@ select avg(sessions) from (
     group by 1)
 ;
 --result: 39
+
