@@ -1,0 +1,2 @@
+gitpod /workspace/course-dbt/greenery (greenery) $ git push --set-upstream origin greenery
+fatal: repository 'https://github.com/livingA6/course-dbt/tree/main/' not found
