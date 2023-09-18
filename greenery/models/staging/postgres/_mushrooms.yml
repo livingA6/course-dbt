@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: postgres
+    database: dev_db  
+    schema: dbt_tomiasikainenkaitofi  
+    tables:
+      - name: mushrooms
