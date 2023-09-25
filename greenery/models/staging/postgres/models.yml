@@ -3,7 +3,12 @@ version: 2
 models:
   - name: stg_addresses
     description: Staging model for addresses
-  
+    columns:
+      - name: address_id
+        tests: 
+          - not_null
+          - unique
+
   - name: stg_events
     description: Staging model for event data
 
@@ -21,3 +26,8 @@ models:
 
   - name: stg_users
     description: Staging model for users
+    columns:
+      - name: user_id
+        tests: 
+          - not_null
+          - unique
