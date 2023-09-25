@@ -2,13 +2,13 @@ Repeat Rate:
 select count(distinct user_id) from dev_db.dbt_tomiasikainenkaitofi.fact_user_orders where frequent_buyer = true;
 99 distinct users who have bought more than once
 
-User likely to buy again are for example user who buys often a good spend:
+User likely to buy again is for example a user who buys often and has a good spend:
 select * 
 from dev_db.dbt_tomiasikainenkaitofi.fact_orders
 where orders > 5
 and total_spend > 1000;
 
-increasing spend canalso be a indicator for likelihood to buy again:
+increasing spend can also be a indicator for likelihood to buy again:
 select user_id, created_at, order_total
 from dev_db.dbt_tomiasikainenkaitofi.fact_user_orders
 order by user_id,created_at desc;
