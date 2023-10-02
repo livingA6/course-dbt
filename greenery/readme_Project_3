@@ -15,3 +15,6 @@ group by 1,2;
 --models
 select * from dev_db.dbt_tomiasikainenkaitofi.fact_overall_conv_rate;
 select * from dev_db.dbt_tomiasikainenkaitofi.fact_conv_rate_by_product;
+
+--product inventory changed
+select * from dev_db.dbt_tomiasikainenkaitofi.product_snapshot;
