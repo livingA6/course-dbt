@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_addresses
+  - name: stg_postgres__addresses
     description: Staging model for addresses
     columns:
       - name: address_id
@@ -9,22 +9,27 @@ models:
           - not_null
           - unique
 
-  - name: stg_events
+  - name: stg_postgres__events
     description: Staging model for event data
 
-  - name: stg_order_items
+  - name: stg_postgres__order_items
     description: Staging model for order line items
 
-  - name: stg_orders
+  - name: stg_postgres__orders
     description: Staging model for orders
-
-  - name: stg_products
+    columns:
+      - name: order_total
+        tests: 
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5000
+  - name: stg_postgres__products
     description: Staging model for stg_products
 
-  - name: stg_promos
+  - name: stg_postgres__promos
     description: Staging model for promos
 
-  - name: stg_users
+  - name: stg_postgres__users
     description: Staging model for users
     columns:
       - name: user_id

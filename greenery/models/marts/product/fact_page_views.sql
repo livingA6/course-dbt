@@ -8,12 +8,11 @@ with session_timing_agg as (
     select * from {{ ref('int_session_timing') }}
 )
 
-{% set event_types = [
-  'page_view',
-  'add_to_cart',
-  'checkout',
-  'package_shipped'
-] %}
+{% set event_types = dbt_utils.get_column_values(
+    table=ref('stg_postgres__events'),
+    column = 'event_type'
+    )
+%}
 
 select e.session_id,
         e.user_id,
