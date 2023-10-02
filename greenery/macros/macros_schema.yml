@@ -8,4 +8,9 @@ macros:
         description: Target column name
       - name: col_value
         description: Target value of the column
+  - name: grant_role
+    description: Grants a specified role into specified schema in Snowflake
+    arguments:
+      - name: role
+        description: Name of the role that is given
      
