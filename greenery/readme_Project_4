@@ -1,0 +1,14 @@
+select ps.* 
+from dev_db.dbt_tomiasikainenkaitofi.product_snapshot ps
+join (
+        select product_id, count(*) 
+        from dev_db.dbt_tomiasikainenkaitofi.product_snapshot
+        group by 1
+        having count(*)>1
+        ) sq on ps.product_id = sq.product_id
+where date_trunc('week', dbt_valid_to) = date_trunc('week',current_date)
+order by 1;
+
+select * 
+from dev_db.dbt_tomiasikainenkaitofi.product_snapshot
+where product_id = '4cda01b9-62e2-46c5-830f-b7f262a58fb1';
