@@ -12,3 +12,8 @@ order by 1;
 select * 
 from dev_db.dbt_tomiasikainenkaitofi.product_snapshot
 where product_id = '4cda01b9-62e2-46c5-830f-b7f262a58fb1';
+
+select * 
+from dev_db.dbt_tomiasikainenkaitofi.product_snapshot
+where inventory = 0
+and date_trunc('week', dbt_valid_to) > date_trunc('week',current_date) -3;
