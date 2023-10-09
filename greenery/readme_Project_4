@@ -17,3 +17,14 @@ select *
 from dev_db.dbt_tomiasikainenkaitofi.product_snapshot
 where inventory = 0
 and date_trunc('week', dbt_valid_to) > date_trunc('week',current_date) -3;
+
+select * from dev_db.dbt_tomiasikainenkaitofi.fact_product_funnel;
+
+Users move through this funnel in this order:
+1. page_views
+2. add_to_carts
+3. checkouts
+
+Biggest drop is between page_views and add_to_carts
+
+Exposure.yml can be found from models-folder, there's a reference to the Sigma workbook created for this purpose
