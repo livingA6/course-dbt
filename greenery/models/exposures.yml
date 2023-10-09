@@ -1,0 +1,15 @@
+version: 2
+
+exposures:  
+- name: product_funnel_dashboard
+  label: Product Funnel Dashboard
+  description: Product funnel models
+  type: dashboard
+  maturity: high
+  url: https://app.sigmacomputing.com/corise-dbt/workbook/Product-Funnel-Greenery-3czrQ5brAY566NW4FpRpPh/edit?:nodeId=LHfXX1pKQ4
+  owner:
+    name: Tomi Asikainen
+    email: tomi.asikainen@kaito.fi
+  depends_on:
+      - ref('fact_product_funnel')
+      - ref('fact_page_views')
